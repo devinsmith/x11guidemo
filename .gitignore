@@ -1,1 +1,8 @@
 *~
+*.d
+*.o
+client_xaw
+client_forms
+client_w
+client_xv
+client_glfw
