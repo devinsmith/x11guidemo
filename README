@@ -16,10 +16,12 @@ Prerequisites
 client_xaw:
 	debian/ubuntu: apt-get install libxt-dev libxaw7-dev
 	arch: pacman -S libxaw
+  fedora: dnf install libXt-devel libXaw-devel
 
 client_forms:
 	debian/ubuntu: apt-get install libforms-dev
 	arch: http://aur.archlinux.org/packages/xforms/
+  fedora: dnf install xforms-devel
 
 client_xv:
 	debian/ubuntu: apt-get install xviewg-dev xview-examples xview-clients
@@ -28,6 +30,7 @@ client_xv:
 client_w:
 	debian/ubuntu: apt-get install libwings-dev
 	arch: apt-get install windowmaker
+  fedora: dnf install WINGs-devel
 
 client_glfw:
 	debian/ubuntu: apt-get install libglfw-dev
