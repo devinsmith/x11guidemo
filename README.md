@@ -3,44 +3,61 @@ About
 
 A collection of "Hello World" programs for various X11 Widget toolkits.
 
-client\_xaw - Xaw (X Athena Widgets and Xt Intrinsics)
-client\_forms - XForms library
-client\_xv - XView / OPEN LOOK library
-client\_w - WINGs / WindowMaker library
-client\_glfw - GL Framework library
+| Executable    | Notes                                    |
+| ------------- | ---------------------------------------- |
+| client\_xaw   | Xaw (X Athena Widgets and Xt Intrinsics) |
+| client\_forms | XForms library                           |
+| client\_xv    | XView / OPEN LOOK library                |
+| client\_w     | WINGs / WindowMaker library              |
+| client\_glfw  | GL Framework library                     |
 
 Prerequisites
 =============
 * NOTE: don't install packges unless the build fails.
 
-client\_xaw:
-	debian/ubuntu: apt-get install libxt-dev libxaw7-dev
-	arch: pacman -S libxaw
-  fedora: dnf install libXt-devel libXaw-devel
+- client\_xaw:
 
-client\_forms:
-	debian/ubuntu: apt-get install libforms-dev
-	arch: http://aur.archlinux.org/packages/xforms/
-  fedora: dnf install xforms-devel
+```
+debian/ubuntu: apt-get install libxt-dev libxaw7-dev
+arch: pacman -S libxaw
+fedora: dnf install libXt-devel libXaw-devel
+```
 
-client\_xv:
-	debian/ubuntu: apt-get install xviewg-dev xview-examples xview-clients
-	arch: N/A
+- client\_forms:
 
-client\_w:
-	debian/ubuntu: apt-get install libwings-dev
-	arch: apt-get install windowmaker
-  fedora: dnf install WINGs-devel
+```
+debian/ubuntu: apt-get install libforms-dev
+arch: http://aur.archlinux.org/packages/xforms/
+fedora: dnf install xforms-devel
+```
 
-client\_glfw:
+- client\_xv:
+
+```
+debian/ubuntu: apt-get install xviewg-dev xview-examples xview-clients
+arch: N/A
+```
+
+- client\_w:
+
+```
+debian/ubuntu: apt-get install libwings-dev
+arch: apt-get install windowmaker
+fedora: dnf install WINGs-devel
+```
+
+- client\_glfw:
+```
 	debian/ubuntu: apt-get install libglfw-dev
 	arch: TBD
+```
 
 Building
 ========
 
+```
 make all
-
+```
 
 BUGS
 ====
