@@ -25,14 +25,22 @@ int main(int argc, char **argv)
 		optlist, XtNumber(optlist),
 		&argc, argv, NULL, applicationShellWidgetClass,
 		XtNwidth, 600, XtNheight, 600, "title", "Hello World", NULL);
-	wm_delete_window = XInternAtom(XtDisplay(top), "WM_DELETE_WINDOW", False);
 
 	XtAppAddActions(appcontext, actions, XtNumber(actions));
+
+	// Indicate that when "top" receives the ClientMessage X11 event,
+	// WM_PROTOCOLS type we should invoke the "quit" action, which is
+	// actually mapped to "act_quit".
 	XtOverrideTranslations(top,
 		XtParseTranslationTable("<Message>WM_PROTOCOLS: quit()"));
 
 	XtRealizeWidget(top);
+
+	// Specify that atoms that this window is going to handle, in this case we
+	// only interested in the WM_DELETE_WINDOW property.
+	wm_delete_window = XInternAtom(XtDisplay(top), "WM_DELETE_WINDOW", False);
 	XSetWMProtocols(XtDisplay(top), XtWindow(top), &wm_delete_window, 1);
+
 	XtAppMainLoop(appcontext);
 	return 0;
 }
